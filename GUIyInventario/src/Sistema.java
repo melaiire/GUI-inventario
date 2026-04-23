@@ -27,12 +27,16 @@ public class Sistema {
 
         listaDiscos.add(new Disco(id, stock, precio, nombre, artista, letra));
 
-        file.saveAll(listaDiscos);
         
     }
 
 
     public void leerDiscos(){
+        file.readAll();
         
+    }
+
+    public void saveAll(){
+        file.saveAll(listaDiscos);
     }
 }

@@ -1,9 +1,9 @@
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-
 
 public class FILEIO {
     
@@ -48,4 +48,22 @@ public class FILEIO {
         }
     }
 
-}
+    public void readAll(){
+        System.out.println("Empezando a leer archivo");
+        
+
+        String str;
+
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("baseDiscos.txt"));
+        while((str = reader.readLine()) !=null){
+            String linea = str;
+            String[] partes = linea.split("\\|");
+            System.out.println("id: "+partes[0]+ " | stock: "+partes[1]+" | precio: "+partes[2] +" | Titulo: "+partes[3]+" | artista: "+partes[4]+" | lirica: "+partes[5]);    
+        } 
+    }catch(IOException e){
+        e.printStackTrace();
+    }
+    }
+    }
+
